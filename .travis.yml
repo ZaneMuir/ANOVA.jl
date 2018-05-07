@@ -10,5 +10,4 @@ script:
 
 after_success:
   - julia -e 'Pkg.add("Documenter")'
-  - pip install mkdocs-material
   - julia -e 'cd(Pkg.dir("ANOVA")); include(joinpath("docs", "make.jl"))'
