@@ -3,7 +3,7 @@ repo_url:         https://github.com/ZaneMuir/ANOVA.jl
 site_description: Description...
 site_author:      ZANE_MUIR
 
-theme: material
+theme: mkdocs
 
 extra_css:
   - assets/documenter.css
