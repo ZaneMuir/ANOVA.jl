@@ -1,3 +1,6 @@
+ANOVA.ipynb
+dev.ipynb
+
 *.jl.cov
 *.jl.*.cov
 *.jl.mem
@@ -5,3 +8,6 @@ deps/deps.jl
 
 .DS_Store
 *.swp
+
+.ipynb_checkpoints/
+playground/
