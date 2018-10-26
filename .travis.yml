@@ -3,8 +3,8 @@ julia:
   - nightly
   - 0.7
 
-script:
-  - julia -e "using Pkg;Pkg.clone(pwd()); Pkg.build(\"ANOVA\")"
+# script:
+#   - julia -e "using Pkg;Pkg.clone(pwd()); Pkg.build(\"ANOVA\")"
 #  - julia test/runtest.jl
 
 
