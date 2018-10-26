@@ -4,7 +4,7 @@ using Printf
 using Distributions
 using Statistics
 # using DataFrames  #TODO
-using DocumentFunction
+# using DocumentFunction
 
 struct anova_entry
     name::Symbol
@@ -26,7 +26,7 @@ $(R.anova_type)
 -----------------------------------------------------------------
 source\t\tSS\tdf\t\tMS\tF\tProb
 -----------------------------------------------------------------\n"""
-    
+
     for part in R.components
         output *= @sprintf("%s\t%10.3f\t%d\t%10.3f\t%.3f\t%.5f\n", part.name, part.SS, part.df, part.MS, part.F, part.p)
     end
