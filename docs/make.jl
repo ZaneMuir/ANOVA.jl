@@ -2,15 +2,19 @@ push!(LOAD_PATH,"../src/")
 using Documenter, ANOVA
 
 makedocs(
-    # format = :html,
+#    format = :html,
     sitename = "ANOVA.jl",
     pages = Any[
         "Getting Start" => "index.md",
+        "Functions" => "API.md"
     ]
 )
 
 deploydocs(
-    deps   = Deps.pip("mkdocs", "python-markdown-math"),
+    #deps   = Deps.pip("mkdocs", "python-markdown-math"),
     repo = "github.com/ZaneMuir/ANOVA.jl.git",
-    julia  = "0.6"
+    target = "build",
+    deps = nothing,
+    make = nothing,
+    julia  = "0.7"
 )
