@@ -2,12 +2,14 @@ push!(LOAD_PATH,"../src/")
 using Documenter, ANOVA
 
 makedocs(
-#    format = :html,
+    format = :html
     sitename = "ANOVA.jl",
+    clean = false,
     pages = Any[
         "Getting Start" => "index.md",
         "Functions" => "API.md"
     ]
+    html_canonical = "https://ZaneMuir.github.io/ANOVA.jl/latest",
 )
 
 deploydocs(
