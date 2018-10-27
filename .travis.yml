@@ -17,6 +17,7 @@ jobs:
       julia: 1.0
       os: linux
       script:
+        - julia -e "using Pkg;Pkg.clone(pwd()); Pkg.build(\"ANOVA\")"
         - julia -e "using Pkg; Pkg.add(\"Documenter\")"
         - julia docs/make.jl
       after_success: skip
