@@ -1,13 +1,22 @@
 language: julia
 julia:
-  - nightly
   - 0.7
+  - 1.0
+  - nightly
 
-# script:
-#   - julia -e "using Pkg;Pkg.clone(pwd()); Pkg.build(\"ANOVA\")"
+notifications:
+  email: false
+
+script:
+  - julia -e "using Pkg;Pkg.clone(pwd()); Pkg.build(\"ANOVA\")"
 #  - julia test/runtest.jl
 
-
-after_success:
-  - julia -e 'using Pkg;Pkg.add("Documenter")'
-  - julia -e 'using Pkg;cd(Pkg.dir("ANOVA")); include(joinpath("docs", "make.jl"))'
+jobs:
+  include:
+    - stage: "Documentation"
+      julia: 1.0
+      os: linux
+      script:
+        - julia -e "using Pkg; Pkg.add(\"Documenter\")"
+        - julia docs/make.jl
+      after_success: skip
